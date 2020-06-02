@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import numpy as np
+import os
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
@@ -19,7 +19,7 @@ st.sidebar.markdown('This application is a Streamlit dashboard to analyze the\
  sentiment of Tweets 🐦')
 
 # define the dataset location
-DATA_URL = ('/Users/ivanandrusin/Desktop/coursera/tweets.csv')
+DATA_URL = os.path.join(os.getcwd(), 'tweets.csv')
 
 # use streamlit cache decorator to upload only the data that have been changed
 @st.cache(persist=True)
